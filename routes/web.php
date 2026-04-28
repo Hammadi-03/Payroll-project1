@@ -12,4 +12,10 @@ Route::view('profile', 'profile')
     ->middleware(['auth'])
     ->name('profile');
 
-require __DIR__.'/auth.php';
+// ✅ Route ini HANYA bisa diakses jika sudah login
+Route::middleware(['auth', 'verified'])->group(function () {
+    Route::view('employee', 'employee.index')->name('employee.index');
+    Route::view('payroll', 'payroll.index')->name('payroll.index');
+});
+
+require __DIR__ . '/auth.php';
