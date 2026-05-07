@@ -13,6 +13,7 @@ class Employee extends Model
     'phone',
     'position',
     'department',
+    'basic_salary',
    ];
 
    public function payrolls()

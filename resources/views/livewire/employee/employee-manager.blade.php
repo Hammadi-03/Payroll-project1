@@ -42,6 +42,12 @@
                     <input type="text" wire:model.blur="department" class="mt-1 block w-full border-gray-300 rounded-md shadow-sm">
                     @error('department') <span class="text-red-500 text-xs">{{ $message }}</span> @enderror
                 </div>
+
+                <div>
+                    <label class="block text-sm font-medium text-gray-700">Gaji Pokok</label>
+                    <input type="number" wire:model.blur="basic_salary" class="mt-1 block w-full border-gray-300 rounded-md shadow-sm">
+                    @error('basic_salary') <span class="text-red-500 text-xs">{{ $message }}</span> @enderror
+                </div>
             </div>
 
             <div class="flex justify-end space-x-4 mt-8">
@@ -75,6 +81,7 @@
                     <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Telepon</th>
                     <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Jabatan</th>
                     <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Departemen</th>
+                    <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Gaji Pokok</th>
                     <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Aksi</th>
                 </tr>
             </thead>
@@ -86,6 +93,7 @@
                         <td class="px-6 py-4 whitespace-nowrap">{{ $employee->phone }}</td>
                         <td class="px-6 py-4 whitespace-nowrap">{{ $employee->position }}</td>
                         <td class="px-6 py-4 whitespace-nowrap">{{ $employee->department }}</td>
+                        <td class="px-6 py-4 whitespace-nowrap">Rp {{ number_format($employee->basic_salary, 0, ',', '.') }}</td>
                         <td class="px-6 py-4 whitespace-nowrap text-sm font-medium space-x-3">
                             <button wire:click="edit({{ $employee->id }})" 
                                 class="inline-flex items-center px-4 py-1.5 bg-gradient-to-b from-indigo-400 to-indigo-600 text-white rounded-full shadow-sm hover:shadow-md hover:-translate-y-0.5 transition-all active:translate-y-0" title="Edit">
