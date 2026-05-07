@@ -31,18 +31,20 @@ new class extends Component
                 <!-- Navigation Links -->
                 <div class="hidden space-x-8 sm:-my-px sm:ms-10 sm:flex">
                     <x-nav-link :href="route('dashboard')" :active="request()->routeIs('dashboard')" wire:navigate>
-                        {{ __('Dashboard') }}
+                        <i class="fa-solid fa-house mr-2"></i> {{ __('Dashboard') }}
                     </x-nav-link>
-
-                    <!--navigatio for the staff-->
+                    <!-- Navigation Karyawan -->
                     <x-nav-link :href="route('employee.index')" :active="request()->routeIs('employee.index')" wire:navigate>
-                        {{ __('Staff') }}
+                        <i class="fa-solid fa-users mr-2"></i> {{ __('Karyawan') }}
+                    </x-nav-link>
+                    <x-nav-link :href="route('employee.edit')" :active="request()->routeIs('employee.edit')" wire:navigate>
+                        <i class="fa-solid fa-user-pen mr-2"></i> {{ __('Kelola Karyawan') }}
+                    </x-nav-link>
+                    <!-- Navigation Kalkulator Penggajian -->
+                    <x-nav-link :href="route('payroll.calculator')" :active="request()->routeIs('payroll.calculator')" wire:navigate>
+                        <i class="fa-solid fa-calculator mr-2"></i> {{ __('Kalkulator Penggajian') }}
                     </x-nav-link>
 
-                    
-                    <x-nav-link :href="route('payroll.index')" :active="request()->routeIs('payroll.index')" wire:navigate>
-                        {{ __('Payroll') }}
-                    </x-nav-link>
 
 
 

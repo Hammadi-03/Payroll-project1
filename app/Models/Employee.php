@@ -6,13 +6,13 @@ use Illuminate\Database\Eloquent\Model;
 
 class Employee extends Model
 {
-   protected $fillabel = [
+    protected $fillable = [
 
     'nik',
     'name',
     'phone',
     'position',
-    
+    'department',
    ];
 
    public function payrolls()
