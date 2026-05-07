@@ -30,7 +30,18 @@ class PayrollCalculator extends Component
     // Lifecycle Hook: hitung ulang THP setiap kali input angka berubah
     public function updated($field)
     {
-        if (in_array($field,['basic_salary','allowance','deduction'])) {
+        if ($field === 'employee_id') {
+            if ($this->employee_id) {
+                $employee = Employee::find($this->employee_id);
+                if ($employee) {
+                    $this->basic_salary = $employee->basic_salary;
+                }
+            } else {
+                $this->basic_salary = 0;
+            }
+        }
+
+        if (in_array($field,['employee_id', 'basic_salary','allowance','deduction'])) {
             $this->net_salary = max(0, ($this->basic_salary + $this->allowance) - $this->deduction);
         }
     }

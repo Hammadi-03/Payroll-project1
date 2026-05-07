@@ -52,13 +52,11 @@
 
             <div class="flex justify-end space-x-4 mt-8">
                 <button type="button" wire:click="resetForm" 
-                    class="group relative flex items-center px-6 py-2.5 bg-gradient-to-b from-gray-400 to-gray-600 text-white font-semibold rounded-full shadow-[0_4px_0_0_rgba(0,0,0,0.2)] hover:shadow-[0_2px_0_0_rgba(0,0,0,0.2)] hover:translate-y-[2px] transition-all active:shadow-none active:translate-y-[4px]">
-                    <span class="absolute inset-0 w-full h-full bg-white/20 rounded-full opacity-0 group-hover:opacity-100 transition-opacity"></span>
+                    class="flex items-center px-6 py-2 bg-gray-500 hover:bg-gray-600 text-white font-bold rounded-full shadow-lg transition-all active:scale-95">
                     <i class="fa-solid fa-rotate-left mr-2"></i> Reset
                 </button>
                 <button type="submit" 
-                    class="group relative flex items-center px-8 py-2.5 bg-gradient-to-b from-blue-400 to-blue-600 text-white font-semibold rounded-full shadow-[0_4px_0_0_rgba(0,0,0,0.2)] hover:shadow-[0_2px_0_0_rgba(0,0,0,0.2)] hover:translate-y-[2px] transition-all active:shadow-none active:translate-y-[4px]">
-                    <span class="absolute inset-0 w-full h-full bg-white/20 rounded-full opacity-0 group-hover:opacity-100 transition-opacity"></span>
+                    class="flex items-center px-8 py-2 bg-blue-600 hover:bg-blue-700 text-white font-bold rounded-full shadow-lg transition-all active:scale-95">
                     @if($isEditMode)
                         <i class="fa-solid fa-user-pen mr-2"></i> Update
                     @else
@@ -107,7 +105,7 @@
                     </tr>
                 @empty
                     <tr>
-                        <td colspan="5" class="px-6 py-4 text-center text-gray-500">Belum ada data karyawan.</td>
+                        <td colspan="7" class="px-6 py-4 text-center text-gray-500">Belum ada data karyawan.</td>
                     </tr>
                 @endforelse
             </tbody>
