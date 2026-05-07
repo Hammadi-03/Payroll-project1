@@ -20,6 +20,7 @@ class EmployeeManager extends Component
     public string $position ='';
     public string $department = '';
     public $basic_salary = 0;
+    public string $hire_date = '';
 
 
     // create/update data
@@ -35,6 +36,7 @@ class EmployeeManager extends Component
             'position' => 'required|min:3',
             'department' => 'required',
             'basic_salary' => 'required|numeric|min:0',
+            'hire_date' => 'required|date',
         ],[
             // Custom pesan error
             'nik.required' => 'NIK wajib diisi.',
@@ -47,6 +49,8 @@ class EmployeeManager extends Component
             'department.required' => 'Departemen wajib diisi.',
             'basic_salary.required' => 'Gaji pokok wajib diisi.',
             'basic_salary.numeric' => 'Gaji pokok harus berupa angka.',
+            'hire_date.required' => 'Tanggal bergabung wajib diisi.',
+            'hire_date.date' => 'Format tanggal tidak valid.',
         ]);
 
         //Simpan atau update data karyawan
@@ -60,6 +64,7 @@ class EmployeeManager extends Component
                 'position' => $this->position,
                 'department' => $this->department,
                 'basic_salary' => $this->basic_salary,
+                'hire_date' => $this->hire_date,
             ] // Data yang akan disimpan atau diupdate
         );
 
@@ -86,6 +91,7 @@ class EmployeeManager extends Component
         $this->position    = $emp->position;
         $this->department  = $emp->department;
         $this->basic_salary = $emp->basic_salary;
+        $this->hire_date   = $emp->hire_date;
         $this->isEditMode  = true;
     }
 
@@ -98,7 +104,7 @@ class EmployeeManager extends Component
 
     public function resetForm()
     {
-        $this->reset(['employee_id', 'nik', 'name', 'phone', 'position', 'department', 'basic_salary', 'isEditMode']);
+        $this->reset(['employee_id', 'nik', 'name', 'phone', 'position', 'department', 'basic_salary', 'hire_date', 'isEditMode']);
         $this->resetValidation();
     }
 

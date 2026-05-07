@@ -14,6 +14,7 @@ class Employee extends Model
     'position',
     'department',
     'basic_salary',
+    'hire_date',
    ];
 
    public function payrolls()
