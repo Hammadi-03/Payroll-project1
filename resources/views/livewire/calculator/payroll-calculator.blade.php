@@ -61,9 +61,14 @@
 
             <button type="submit"
                 wire:loading.attr="disabled"
-                class="w-full bg-blue-600 text-white font-bold py-2 px-4 rounded hover:bg-blue-700 disabled:opacity-50">
-                <span wire:loading.remove>💾 Simpan Slip Gaji</span>
-                <span wire:loading>Menyimpan...</span>
+                class="group relative w-full overflow-hidden flex items-center justify-center px-8 py-3 bg-gradient-to-b from-blue-400 to-blue-700 text-white font-bold rounded-full shadow-[0_4px_0_0_rgba(0,0,0,0.2)] hover:shadow-[0_2px_0_0_rgba(0,0,0,0.2)] hover:translate-y-[2px] transition-all active:shadow-none active:translate-y-[4px] disabled:opacity-50">
+                <span class="absolute inset-0 w-full h-full bg-white/20 opacity-0 group-hover:opacity-100 transition-opacity"></span>
+                <span wire:loading.remove class="flex items-center">
+                    <i class="fa-solid fa-floppy-disk mr-2"></i> Simpan Slip Gaji
+                </span>
+                <span wire:loading class="flex items-center">
+                    <i class="fa-solid fa-circle-notch fa-spin mr-2"></i> Menyimpan...
+                </span>
             </button>
 
         </form>

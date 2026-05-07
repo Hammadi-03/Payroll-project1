@@ -44,11 +44,15 @@
                 </div>
             </div>
 
-            <div class="flex justify-end space-x-3 mt-6">
-                <button type="button" wire:click="resetForm" class="bg-gray-500 hover:bg-gray-600 text-white font-medium px-5 py-2.5 rounded-lg shadow-sm transition flex items-center">
+            <div class="flex justify-end space-x-4 mt-8">
+                <button type="button" wire:click="resetForm" 
+                    class="group relative flex items-center px-6 py-2.5 bg-gradient-to-b from-gray-400 to-gray-600 text-white font-semibold rounded-full shadow-[0_4px_0_0_rgba(0,0,0,0.2)] hover:shadow-[0_2px_0_0_rgba(0,0,0,0.2)] hover:translate-y-[2px] transition-all active:shadow-none active:translate-y-[4px]">
+                    <span class="absolute inset-0 w-full h-full bg-white/20 rounded-full opacity-0 group-hover:opacity-100 transition-opacity"></span>
                     <i class="fa-solid fa-rotate-left mr-2"></i> Reset
                 </button>
-                <button type="submit" class="bg-blue-600 hover:bg-blue-700 text-white font-medium px-5 py-2.5 rounded-lg shadow-sm transition flex items-center">
+                <button type="submit" 
+                    class="group relative flex items-center px-8 py-2.5 bg-gradient-to-b from-blue-400 to-blue-600 text-white font-semibold rounded-full shadow-[0_4px_0_0_rgba(0,0,0,0.2)] hover:shadow-[0_2px_0_0_rgba(0,0,0,0.2)] hover:translate-y-[2px] transition-all active:shadow-none active:translate-y-[4px]">
+                    <span class="absolute inset-0 w-full h-full bg-white/20 rounded-full opacity-0 group-hover:opacity-100 transition-opacity"></span>
                     @if($isEditMode)
                         <i class="fa-solid fa-user-pen mr-2"></i> Update
                     @else
@@ -83,11 +87,13 @@
                         <td class="px-6 py-4 whitespace-nowrap">{{ $employee->position }}</td>
                         <td class="px-6 py-4 whitespace-nowrap">{{ $employee->department }}</td>
                         <td class="px-6 py-4 whitespace-nowrap text-sm font-medium space-x-3">
-                            <button wire:click="edit({{ $employee->id }})" class="text-indigo-600 hover:text-indigo-900 transition" title="Edit">
-                                <i class="fa-solid fa-pen-to-square"></i> Edit
+                            <button wire:click="edit({{ $employee->id }})" 
+                                class="inline-flex items-center px-4 py-1.5 bg-gradient-to-b from-indigo-400 to-indigo-600 text-white rounded-full shadow-sm hover:shadow-md hover:-translate-y-0.5 transition-all active:translate-y-0" title="Edit">
+                                <i class="fa-solid fa-pen-to-square mr-1"></i> Edit
                             </button>
-                            <button wire:click="delete({{ $employee->id }})" wire:confirm="Yakin ingin menghapus karyawan ini?" class="text-red-600 hover:text-red-900 transition" title="Hapus">
-                                <i class="fa-solid fa-trash-can"></i> Hapus
+                            <button wire:click="delete({{ $employee->id }})" wire:confirm="Yakin ingin menghapus karyawan ini?" 
+                                class="inline-flex items-center px-4 py-1.5 bg-gradient-to-b from-red-400 to-red-600 text-white rounded-full shadow-sm hover:shadow-md hover:-translate-y-0.5 transition-all active:translate-y-0" title="Hapus">
+                                <i class="fa-solid fa-trash-can mr-1"></i> Hapus
                             </button>
                         </td>
                     </tr>
